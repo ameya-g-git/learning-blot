@@ -13,7 +13,7 @@ to get my feet wet with the api, i decided to first create a spirograph star gen
 
 | | |
 | --- | --- |
-| ![star1](https://github.com/ameya-g-git/learning-blot/assets/121361927/80a15953-b75e-4c34-a057-7ca8c6823eaf) | ![star2](https://github.com/ameya-g-git/learning-blot/assets/121361927/16dd0d74-a21f-464e-a3ef-8be63dd373a9) |
-| ![star3](https://github.com/ameya-g-git/learning-blot/assets/121361927/039993b0-ebbc-4c01-b7f3-68d4b353183e) | ![star(?)4](https://github.com/ameya-g-git/learning-blot/assets/121361927/e06209bb-4e43-4b18-ad02-539c9ce51142) |
+| ![star1](https://github.com/ameya-g-git/learning-blot/blob/main/star/star1.png) | ![star2](https://github.com/ameya-g-git/learning-blot/blob/main/star/star2.png) |
+| ![star3](https://github.com/ameya-g-git/learning-blot/blob/main/star/star3.png) | ![star(?)4](https://github.com/ameya-g-git/learning-blot/blob/main/star/star4.png) |
 
 ---
