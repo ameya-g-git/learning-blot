@@ -8,8 +8,8 @@ function pointCoord(angle, radius) { // returns the coords of a point provided a
     Math.sin(angle) * radius
   ]
 };
-
-function drawStar(radius, points, angle, origin) { // yeahhhhh the main function
+                                                // some default values here, feel free to assign them in the function call and create some crazy stuff
+function drawStar(radius, points, angle, origin, angleVar = 4, radiusVar = -0.3) { // yeahhhhh the main function
   const star = createTurtle();
   star.jump(pointCoord(angle, radius));
 
@@ -17,8 +17,8 @@ function drawStar(radius, points, angle, origin) { // yeahhhhh the main function
     angle += (2 * Math.PI) / points;
 
     
-    star.goTo(pointCoord(angle + (80 * i), radius));
-    radius += -1.2
+    star.goTo(pointCoord(angle + (angleVar * i), radius));
+    radius += radiusVar
 
   };
   
@@ -30,6 +30,6 @@ function drawStar(radius, points, angle, origin) { // yeahhhhh the main function
   return star
 };
 
-const star = drawStar(71, 129, 0, [11, 0]) // example !
+const star = drawStar(60, 122, 0, [1, 0]) // example, feel free to plug in whatever values you want !
 
 drawTurtles([star]); // draw it
