@@ -4,7 +4,7 @@ hi! big fan of the [blot](github.com/hackclub/blot/) project, parametric math is
 
 as i'm learning blot, ill be putting all my stuff in this repository for people to view and maybe use! i know i'll be using a couple of the functions i'm making in my final piece to push to the official blot repository!
 
-big big thanks to [geschmit]([url](https://github.com/geschmit)) for the [blot.d.ts]([url](https://github.com/geschmit/blotfont/blob/main/blot.d.ts)) typechecking file, makes coding this in vscode much easier, and big thank you to [hack club]([url](https://github.com/hackclub/)) in general for holding this initiative! love the community!
+big big thanks to [geschmit](https://github.com/geschmit) for the [blot.d.ts](https://github.com/geschmit/blotfont/blob/main/blot.d.ts) typechecking file, makes coding this in vscode much easier, and big thank you to [hack club]([url](https://github.com/hackclub/)) in general for holding this initiative! love the community!
 
 ---
 
