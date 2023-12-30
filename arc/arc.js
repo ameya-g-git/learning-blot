@@ -8,7 +8,7 @@ function pointCoord(angle, radius) { // returns the coords of a point provided a
   ]
 };
 
-function arc(radius, points, angle, origin) { // yeahhhhh the main function
+function arc(angle, radius, points) { // yeahhhhh the main function
   const arc = createTurtle();
   const angleRad = angle * (Math.PI / 180);
 
@@ -20,13 +20,15 @@ function arc(radius, points, angle, origin) { // yeahhhhh the main function
   };
   
   arc.translate(
-    [WIDTH / 2 + radius, HEIGHT / 2],
-    origin
+    [WIDTH / 2, HEIGHT / 2],
+    [-radius, 0]
   );
 
   return arc
 };
 
-const arc1 = arc(47, 74, 139, [0,0]); // example, feel free to plug in whatever values you want !
+const arc1 = arc(625, 21, 1583); // example, feel free to plug in whatever values you want !
+let arc2 = createTurtle()
+const arc3 = arc2.arc(109, 11)
 
-drawTurtles([arc1]); // draw it
+drawTurtles([arc1, arc3]); // draw it
