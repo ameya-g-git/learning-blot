@@ -21,6 +21,64 @@ function SDFCircle(pt, x, y, radius) {
   return ptVal
 }
 
+function SDFRect(pt, x, y, width, height) {
+  let ptVal = 0;
+  
+  const ptX = pt[0];
+  const ptY = pt[1];
+
+  const maxX = width + x;
+  const maxY = height + y;
+
+  if (( (ptX > x) && (ptX < maxX) ) && ( (ptY > y) && (ptY < maxY) )) {
+    ptVal = 0;
+  }
+  else {
+    ptVal = 1;
+  }
+
+
+  // const distX = () => {
+  //   if (ptX < x) {
+  //     return x - ptX;
+  //   }
+  //   else if (ptX > (width + x)) {
+  //     return ((width + x) - ptX);
+  //   }
+  //   else {
+  //     return 0;
+  //   }
+  // }
+
+  // const distY = () => {
+  //   if (ptY < y) {
+  //     return y - ptY;
+  //   }
+  //   else if (ptY > (height + y)) {
+  //     return ((height + y) - ptY);
+  //   }
+  //   else {
+  //     return 0;
+  //   }
+  // }
+
+  // const length = Math.sqrt( ((Math.max(distX, 0))**2) + ((Math.max(distY, 0))**2) )
+
+  // const length = Math.sqrt( distX**2 + distY**2 );
+  
+  // ptVal = length;
+    
+  // const rectWidth = ptX - x - (width / 2);
+  // const rectHeight = ptY - y - (height / 2);
+
+  // const innerDist = Math.min(Math.max(rectWidth, rectHeight), 0);
+  // const outerDist = Math.sqrt( (Math.max(rectWidth, 0))**2 + (Math.max(rectHeight, 0))**2 );
+
+  // ptVal = innerDist + outerDist;
+
+  return ptVal;
+}
+
 function pointCoord(angle, radius) { // returns the coords of a point provided a radius and an angle to subtend around a circle of that radius
   return [
     (Math.cos(angle) * radius) - radius,
@@ -119,16 +177,18 @@ for (let i = 0; i < 2; i++) {
 }
 
 
+buildings.resample(0.01);
 
-drawTurtles([buildings]);
 
-
-// build1.iteratePath( // basic SDF implementation, adjust as needed
+// buildings.iteratePath( // basic SDF implementation, adjust as needed
 //   (pt, tValue) => {
-//     if (SDFCircle(pt, 41, 47, 18) < 0) {
+//     if (SDFRect(pt, 0, 48, 31, 13) == 0) {
 //       return "REMOVE";
 //     }
 //   }
 // )
+
+drawTurtles([buildings]);
+
 
 // drawTurtles([build1]);
