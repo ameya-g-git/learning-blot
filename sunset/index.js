@@ -8,12 +8,6 @@ const HORIZON = 45; // holds the y-val of the horizon
 
 // functions
 
-function randInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
-}
-
 function SDFCircle(pt, x, y, radius) {
   let ptVal = 0; // holds the SDF value of the point, will be returned at end of fn
 
@@ -92,24 +86,39 @@ function building(x, y, width, height) {
   return tempBuilding
 }
 
+// building gen
+
 let buildings = createTurtle();
-const maxWidth = 35;
+const maxWidth = 45;
 
 for (let i = 0; i < 2; i++) {
-  let x = (70 * i) + 6;
+  let x = 80 * i
   let buildingsWidth = 0;
 
   while (buildingsWidth < maxWidth) {
-    let tempWidth = randInt(6, 14);
-    let tempHeight = randInt(20, 49);
+    let tempWidth = randInRange(6, 14);
+    let tempHeight = randInRange(20, 49);
 
+    if ((buildingsWidth + tempWidth) > maxWidth) {
+      break;
+    }
+  
     let tempBuilding = building(x, HORIZON, tempWidth, tempHeight);
     buildings.join(tempBuilding);
 
     x += tempWidth;
-    buildingsWidth += tempWidth;
+    buildingsWidth += tempWidth
+  }
+
+  if (buildingsWidth != maxWidth) {
+    const leftoverWidth = maxWidth - buildingsWidth;
+    const tempHeight = randInRange(20, 49);
+    const tempBuilding = building(x, HORIZON, leftoverWidth, randInRange(20,49));
+    buildings.join(tempBuilding);
   }
 }
+
+
 
 drawTurtles([buildings]);
 
