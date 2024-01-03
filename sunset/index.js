@@ -148,6 +148,8 @@ function building(x, y, width, height) {
 
 let buildings = createTurtle();
 const maxWidth = 45;
+let sdfParams = [];
+
 
 for (let i = 0; i < 2; i++) {
   let x = 80 * i
@@ -166,6 +168,8 @@ for (let i = 0; i < 2; i++) {
 
     x += tempWidth;
     buildingsWidth += tempWidth
+
+    sdfParams += [x, HORIZON, tempWidth, tempHeight];
   }
 
   if (buildingsWidth != maxWidth) {
@@ -177,16 +181,22 @@ for (let i = 0; i < 2; i++) {
 }
 
 
-buildings.resample(0.01);
+// buildings.resample(0.01);
 
+// for (let fn of sdfParams) {  // SDF implementation for the sun path, only uncomment once sun function is done
+//   sun.iteratePath( 
+//     (pt, tValue) => {
+//       let x = sdfParams[0];
+//       let y = sdfParams[1];
+//       let width = sdfParams[2];
+//       let height = sdfParams[3];
 
-// buildings.iteratePath( // basic SDF implementation, adjust as needed
-//   (pt, tValue) => {
-//     if (SDFRect(pt, 0, 48, 31, 13) == 0) {
-//       return "REMOVE";
+//       if (SDFRect(pt, x, y, width, height) == 0) {
+//         return "REMOVE";
+//       }
 //     }
-//   }
-// )
+//   )
+// }
 
 drawTurtles([buildings]);
 
